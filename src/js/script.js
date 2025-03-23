@@ -1,11 +1,11 @@
 /* global Handlebars, utils, dataSource */ // eslint-disable-line no-unused-vars
 
 {
-  'use strict';
+  ('use strict');
 
-const select = {
-  templateOf: {
-    menuProduct: "#template-menu-product",
+  const select = {
+    templateOf: {
+      menuProduct: '#template-menu-product',
     },
     containerOf: {
       menu: '#product-list',
@@ -45,21 +45,80 @@ const select = {
       defaultValue: 1,
       defaultMin: 0,
       defaultMax: 10,
-    }
+    },
   };
 
   const templates = {
-    menuProduct: Handlebars.compile(document.querySelector(select.templateOf.menuProduct).innerHTML),
+    menuProduct: Handlebars.compile(
+      document.querySelector(select.templateOf.menuProduct).innerHTML
+    ),
   };
+  class Product {
+    constructor(id, data) {
+      const thisProduct = this;
+
+      thisProduct.id = id;
+      thisProduct.data = data;
+      thisProduct.renderInMenu();
+      thisProduct.initAccordion();
+      console.log('new Product:', thisProduct);
+    }
+    renderInMenu() {
+      const thisProduct = this;
+      const generatedHTML = templates.menuProduct(thisProduct.data);
+      thisProduct.element = utils.createDOMFromHTML(generatedHTML);
+      const menuContainer = document.querySelector(select.containerOf.menu);
+      menuContainer.appendChild(thisProduct.element);
+    }
+    initAccordion() {
+      const thisProduct = this;
+      /* find the clickable trigger (the element that should react to clicking) */
+      const clickableTrigger = thisProduct.element.querySelector(
+        select.menuProduct.clickable
+      );
+      /* START: add event listener to clickable trigger on event click */
+      clickableTrigger.addEventListener('click', function (event) {
+        /* prevent default action for event */
+        event.preventDefault();
+        /* find active product (product that has active class) */
+        const activeProduct = document.querySelector(
+          `.${classNames.menuProduct.wrapperActive}`
+        );
+        if (activeProduct && activeProduct !== thisProduct.element) {
+          /* if there is active product and it's not thisProduct.element, remove class active from it */
+          activeProduct.classList.remove(classNames.menuProduct.wrapperActive);
+        }
+        /* toggle active class on thisProduct.element */
+        thisProduct.element.classList.toggle(
+          classNames.menuProduct.wrapperActive
+        );
+      });
+    }
+  }
 
   const app = {
-    init: function(){
+    initMenu() {
+      const thisApp = this;
+      console.log('thisApp.data:', thisApp.data);
+      for (let productData in thisApp.data.products) {
+        new Product(productData, thisApp.data.products[productData]);
+      }
+    },
+
+    init() {
       const thisApp = this;
       console.log('*** App starting ***');
       console.log('thisApp:', thisApp);
       console.log('classNames:', classNames);
       console.log('settings:', settings);
       console.log('templates:', templates);
+      thisApp.initData();
+      thisApp.initMenu();
+    },
+    initData() {
+      const thisApp = this;
+      thisApp.data = dataSource;
+      console.log('thisApp.data:', thisApp.data);
     },
   };
 
