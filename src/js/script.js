@@ -160,16 +160,23 @@
           const optionImg = thisProduct.imageWrapper.querySelector(
             `.${paramId}-${optionId}`
           );
-          if (formData[paramId] && formData[paramId].includes(optionId)) {
+
+          const optionSelected =
+            formData[paramId] && formData[paramId].includes(optionId);
+
+          if (optionSelected) {
             if (option.default !== true) {
               price += option.price;
-            } else if (optionImg) {
-              optionImg.classList.add(classNames.menuProduct.imageVisible);
             }
-          } else if (option.default === true) {
-            price -= option.price;
-
-            if (optionImg) {
+          } else {
+            if (option.default === true) {
+              price -= option.price;
+            }
+          }
+          if (optionImg) {
+            if (optionSelected) {
+              optionImg.classList.add(classNames.menuProduct.imageVisible);
+            } else {
               optionImg.classList.remove(classNames.menuProduct.imageVisible);
             }
           }
