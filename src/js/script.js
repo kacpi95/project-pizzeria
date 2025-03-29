@@ -162,7 +162,6 @@
     }
     initOrderForm() {
       const thisProduct = this;
-      // console.log(thisProduct);
       thisProduct.dom.form.addEventListener('submit', function (event) {
         event.preventDefault();
         thisProduct.processOrder();
@@ -199,7 +198,6 @@
         for (let optionId in param.options) {
           // determine option value, e.g. optionId = 'olives', option = { label: 'Olives', price: 2, default: true }
           const option = param.options[optionId];
-          // console.log(optionId, option);
           const optionImg = thisProduct.dom.imageWrapper.querySelector(
             `.${paramId}-${optionId}`
           );
@@ -230,7 +228,6 @@
       price *= thisProduct.amountWidget.value;
       // update calculated price in the HTML
       thisProduct.dom.priceElem.innerHTML = price;
-      // console.log(thisProduct.priceElem.innerHTML);
     }
     initAmountWidget() {
       const thisProduct = this;
@@ -246,7 +243,6 @@
     constructor(element) {
       const thisWidget = this;
       thisWidget.getElements(element);
-      // thisWidget.setValue(thisWidget.input.value);
       const inputValue = thisWidget.input.value;
       if (inputValue) {
         thisWidget.setValue(inputValue);
@@ -336,7 +332,6 @@
   const app = {
     initMenu() {
       const thisApp = this;
-      // console.log('thisApp.data:', thisApp.data);
       for (let productData in thisApp.data.products) {
         new Product(productData, thisApp.data.products[productData]);
       }
@@ -356,7 +351,6 @@
     initData() {
       const thisApp = this;
       thisApp.data = dataSource;
-      // console.log('thisApp.data:', thisApp.data);
     },
     initCart: function () {
       const thisApp = this;
