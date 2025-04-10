@@ -8,7 +8,6 @@ class Cart {
     thisCart.products = [];
     thisCart.getElements(element);
     thisCart.initActions();
-    console.log('new Cart', thisCart);
   }
   getElements(element) {
     const thisCart = this;
@@ -63,7 +62,6 @@ class Cart {
     thisCart.dom.productList.appendChild(generatedDOM);
     thisCart.products.push(new CartProduct(menuProduct, generatedDOM));
     thisCart.update();
-    console.log('thisCart.products', thisCart.products);
   }
   update() {
     const thisCart = this;
@@ -121,8 +119,6 @@ class Cart {
     };
 
     fetch(url, options);
-    console.log('objectpayload', payload);
-    console.log(thisCart.dom.address);
   }
 }
 
