@@ -202,7 +202,7 @@
   "events": [
     {
       "id": 1,
-      "date": "2025-05-01",
+      "date": "2025-04-13",
       "hour": "12:30",
       "table": 1,
       "repeat": false,
@@ -213,7 +213,7 @@
     {
       "id": 2,
       "date": "2025-04-20",
-      "hour": "16:00",
+      "hour": "12:00",
       "table": 3,
       "repeat": "daily",
       "duration": 2,
@@ -222,7 +222,7 @@
     },
     {
       "id": 3,
-      "date": "2025-05-06",
+      "date": "2025-04-21",
       "hour": "12:00",
       "table": 3,
       "repeat": "daily",
@@ -251,5 +251,16 @@
       "starters": ["lemonWater"]
     }
   ],
-  "bookings": []
+  "bookings": [
+    {
+      "id": 1,
+      "date": "2025-04-15",
+      "hour": "12:30",
+      "table": 1,
+      "repeat": false,
+      "duration": 4,
+      "ppl": 3,
+      "starters": ["water"]
+    }
+  ]
 }

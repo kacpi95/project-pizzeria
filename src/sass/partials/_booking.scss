@@ -198,3 +198,8 @@
     @include flex(row, flex-start, space-between);
     margin: ($base-size * 4) auto;
   }
+  .table.selected {
+    border: 2px solid #00bfa5;
+    background-color: #e0f7fa;
+  }
+  
