@@ -288,6 +288,8 @@ class Booking {
         );
 
         thisBooking.updateDOM();
+        window.location.hash = '#/booking';
+        history.replaceState(null, '', window.location.pathname + '#/booking');
       });
   }
 }
