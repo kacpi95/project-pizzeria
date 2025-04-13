@@ -1,4 +1,133 @@
+.home {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
 .home-wrapper {
-  margin: 42px auto;
-  padding: 72px 48px;
+  margin-top: 36px;
+  background-color: white;
+  padding: 0 30px;
+}
+
+.box-order-book {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.order-box,
+.booking-box {
+  padding-top: 30px;
+  position: relative;
+  width: 48%;
+  height: 250px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.order-box img,
+.booking-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.order-box p,
+.booking-box p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-family: 'Oswald', sans-serif;
+  font-size: 22px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.home-information {
+  background-color: #ff6b6b;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  margin-bottom: 40px;
+  border-radius: 10px;
+}
+
+.home-information p {
+  font-size: 20px;
+  font-weight: 600;
+}
+.carusel {
+  width: 100%;
+  overflow: hidden;
+}
+.carousel-cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-cell img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.carusel-info {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background-color: black;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.quote {
+  font-size: 18px;
+  font-style: italic;
+  font-weight: 500;
+}
+
+.box-images {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.box-images img {
+  width: 100%;
+  height: 200px;
+  border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+  .box-order-book {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .order-box,
+  .booking-box {
+    width: 100%;
+    height: 200px;
+  }
+
+  .box-images {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .home-wrapper {
+    padding: 0 10px;
+  }
+
+  .box-images {
+    grid-template-columns: 1fr;
+  }
 }
