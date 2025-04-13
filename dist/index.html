@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" >
     <title>Pizzeria</title>
     <link
       href="https://fonts.googleapis.com/css?family=Lato:400,300i,700%7COswald:300,500,700&amp;subset=latin-ext"
       rel="stylesheet"
-    />
+    >
     <link
       href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
       rel="stylesheet"
-    />
+    >
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
-    />
-    <link rel="stylesheet" href="./vendor/range-slider.min.css" />
-    <link rel="stylesheet" href="css/style.css" />
+    >
+    <link rel="stylesheet" href="./vendor/range-slider.min.css" >
+    <link rel="stylesheet" href="css/style.css" >
   </head>
   <body>
     <header class="header">
@@ -68,12 +68,12 @@
                   </li>
                 </ul>
                 <div class="cart__order-confirmation">
-                  <input type="tel" name="phone" placeholder="Your phone" />
+                  <input type="tel" name="phone" placeholder="Your phone" >
                   <input
                     type="text"
                     name="address"
                     placeholder="Your address"
-                  />
+                  >
                   <button type="submit" class="btn-secondary">Order</button>
                 </div>
               </form>
@@ -84,6 +84,9 @@
     </header>
 
     <div id="pages">
+      <section id="home">
+        <div id="home-wrapper" class="home-wrapper container"></div>
+      </section>
       <section id="order">
         <div id="product-list" class="product-list container"></div>
       </section>
@@ -91,6 +94,47 @@
         <div class="booking-wrapper container"></div>
       </section>
     </div>
+
+    <section class="home-wrapper">
+      <div class="box-order-book">
+        <div class="order-box">
+          <img src="./images/imgHome/pizza-1.jpg" alt="pizza" />
+          <p>ORDER ONLINE</p>
+        </div>
+        <div class="booking-box">
+          <img src="./images/imgHome/pizza-2.jpg" alt="dinner" />
+          <p>BOOK A TABLE</p>
+        </div>
+      </div>
+      <div class="home-information">
+        <p>OPENING HOURS:</p>
+        <p>TUE-SUN, 12PM - 12AM</p>
+      </div>
+      <div class="caruzela">
+        <img src="./images/imgHome/pizza-3.jpg" alt="meet" />
+        <div class="information">
+          <p>AmazingServise</p>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptates
+            sit harum officiis corporis dolor culpa illo obcaecati nostrum
+            quidem assumenda!
+          </p>
+          <p>- Margaret Osborne</p>
+        </div>
+        <div class="box-images">
+          <img src="./images/imgHome/pizza-4.jpg" alt="foot" /><img
+            src="./images/imgHome/pizza-5.jpg"
+            alt="salat"
+          /><img src="./images/imgHome/pizza-6.jpg" alt="pizza" /><img
+            src="./images/imgHome/pizza-7.jpg"
+            alt="word open"
+          /><img src="./images/imgHome/pizza-8.jpg" alt="hands" /><img
+            src="./images/imgHome/pizza-9.jpg"
+            alt="restaurant"
+          />
+        </div>
+      </div>
+    </section>
 
     <script id="template-booking-widget" type="text/x-handlebars-template">
       <div class='booking-widget'>
