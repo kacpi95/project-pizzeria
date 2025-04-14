@@ -8,6 +8,8 @@ const app = {
     const thisApp = this;
     thisApp.pages = document.querySelector(select.containerOf.pages).children;
     thisApp.navLinks = document.querySelectorAll(select.nav.links);
+    const orderBox = document.querySelector('#order-box');
+    const bookingBox = document.querySelector('#booking-box');
 
     const idFromHash = window.location.hash.replace('#/', '');
 
@@ -31,6 +33,20 @@ const app = {
         thisApp.activatePages(id);
 
         window.location.hash = '#/' + id;
+      });
+    }
+    if (orderBox) {
+      orderBox.addEventListener('click', function (event) {
+        event.preventDefault();
+        thisApp.activatePages('order');
+        window.location.hash = '#/order';
+      });
+    }
+    if (bookingBox) {
+      bookingBox.addEventListener('click', function (event) {
+        event.preventDefault();
+        thisApp.activatePages('booking');
+        window.location.hash = '#/booking';
       });
     }
   },
