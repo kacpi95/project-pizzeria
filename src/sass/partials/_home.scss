@@ -1,12 +1,9 @@
-.home {
-  max-width: 700px;
-  margin: 0 auto;
-}
-
 .home-wrapper {
-  margin-top: 36px;
+  max-width: 700px;
+  margin: 36px auto 0 auto;
   background-color: white;
   padding: 0 30px;
+  margin-bottom: 50px;
 }
 
 .box-order-book {
@@ -24,6 +21,13 @@
   height: 250px;
   overflow: hidden;
   border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+.order-box:hover,
+.booking-box:hover {
+  cursor: pointer;
+  color: #ff6b6b;
 }
 
 .order-box img,
@@ -45,6 +49,12 @@
   font-size: 22px;
   font-weight: 500;
   text-transform: uppercase;
+  transition: transform 0.4s ease, letter-spacing 0.4s ease;
+}
+.order-box:hover p,
+.booking-box:hover p {
+  transform: translate(-50%, -50%) scale(1.1);
+  letter-spacing: 2px;
 }
 
 .home-information {
@@ -63,6 +73,7 @@
 .carusel {
   width: 100%;
   overflow: hidden;
+  position: relative;
 }
 .carousel-cell {
   display: flex;
@@ -97,6 +108,7 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   margin-top: 40px;
+  padding-bottom: 40px;
 }
 
 .box-images img {
@@ -128,6 +140,6 @@
   }
 
   .box-images {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1;
   }
 }
