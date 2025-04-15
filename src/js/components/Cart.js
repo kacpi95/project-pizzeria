@@ -35,7 +35,7 @@ class Cart {
     thisCart.dom.address = thisCart.dom.wrapper.querySelector(
       select.cart.address
     );
-    thisCart.dom.phone = this.dom.wrapper.querySelector(select.cart.phone);
+    thisCart.dom.phone = thisCart.dom.wrapper.querySelector(select.cart.phone);
   }
   initActions() {
     const thisCart = this;
